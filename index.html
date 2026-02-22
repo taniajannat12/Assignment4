@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<header class="mx-auto space-y-4 w-[80%]">
+    <h1 class="font-bold text-3xl text-blue-950 mt-5">Job Application Tracker</h1>
+
+    <div class="grid grid-cols-3">
+        <div class="border-b-blue-50 shadow-2xl shadow-gray-400/40 w-72 py-3 px-2">
+            <p >Total</p>
+            <p id="total" class="font-bold">0</p>
+        </div>
+
+         <div class="border-b-blue-50 shadow-2xl shadow-gray-400/40 w-72  py-3 px-2">
+             <p >Interview</p>
+            <p id="inter" class="font-bold">0</p>
+         </div>
+
+          <div class="border-b-blue-50 shadow-2xl shadow-gray-400/40 w-72  py-3 px-2 ">
+             <p>Rejected</p>
+            <p  id="reject" class="font-bold">0</p>
+          </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+<main class="mx-auto space-y-4 w-[80%] mt-10 " >
+    <p class="font-bold text-xl">Available Jobs</p>
+    <div class="flex gap-[700px]">
+    <div class="flex gap-10">
+ <div onclick="toggleStyle('all-filter-btn')" class="bg-blue-500  w-16 rounded-xl px-3 py-2 h-10 " id="all-filter-btn">All</div>
+
+
+ <div onclick="toggleStyle('inter-filter-btn')"class="bg-amber-50 shadow-2xl shadow-gray-400/40 w-24 rounded-xl px-3 py-2 h-10 box-border" id="inter-filter-btn">Interview</div>
+
+        <div onclick="toggleStyle('reject-filter-btn')" class=" bg-amber-50 shadow-2xl shadow-gray-400/40 w-24 rounded-xl px-3 py-2 h-10" id="reject-filter-btn">Rejected</div>
+    </div>
+
+
+<div><p>0 jobs</p></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="all-cards">
+
+<div class="space-y-4 border-amber-50 shadow-xl  rounded-xl px-4 py-4  ">
+    
+<h3 class="font-bold text-xl">Mobile First Corp</h3>
+<p class="text-gray-400">React Native Developer</p>
+<p class="text-gray-400">Remote • Full-time • $130,000 - $175,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+
+<div class="space-y-4 border-amber-50 shadow-xl  rounded-xl px-4 py-4">
+<h3 class="font-bold text-xl">WebFlow Agency</h3>
+<p class="text-gray-400">Web Designer & Developer</p>
+<p class="text-gray-400">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+
+<div class="space-y-4 border-amber-50  px-4 py-4 shadow-xl  rounded-xl">
+<h3 class="font-bold text-xl">DataViz Solutions</h3>
+<p class="text-gray-400">Data Visualization Specialist</p>
+<p class="text-gray-400">Boston, MA • Full-time • $125,000 - $165,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+
+
+<div class="space-y-4 border-amber-50  px-4 py-4 shadow-xl  rounded-xl">
+<h3 class="font-bold text-xl">CloudFirst Inc</h3>
+<p class="text-gray-400">Backend Developer</p>
+<p class="text-gray-400">Seattle, WA • Full-time • $140,000 - $190,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="space-y-4 border-amber-50  px-4 py-4 shadow-xl  rounded-xl">
+<h3 class="font-bold text-xl">Innovation Labs</h3>
+<p class="text-gray-400">UI/UX Engineer</p>
+<p class="text-gray-400">Austin, TX • Full-time • $110,000 - $150,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="space-y-4 border-amber-50  px-4 py-4 shadow-xl  rounded-xl">
+<h3 class="font-bold text-xl">MegaCorp Solutions</h3>
+<p class="text-gray-400">JavaScript Developer</p>
+<p class="text-gray-400">New York, NY • Full-time • $130,000 - $170,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+<div class="space-y-4 border-amber-50 shadow-xl  rounded-xl px-4 py-4">
+<h3 class="font-bold text-xl">StartupXYZ</h3>
+<p class="text-gray-400">Full Stack Engineer</p>
+<p class="text-gray-400">Remote • Full-time • $120,000 - $160,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+<div class="space-y-4 border-amber-50 shadow-xl  rounded-xl px-4 py-4">
+<h3 class="font-bold text-xl">TechCorp Industries</h3>
+<p class="text-gray-400">Senior Frontend Developer</p>
+<p class="text-gray-400">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+<p class="bg-blue-200 p-1 shadow-2xl shadow-gray-400/40] w-32  h-8 rounded-xl ] box-border">NOT APPLIED</p>
+<p>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+
+
+<div class="flex gap-5">
+<div>
+    <p class="text-green-500 border-2 p-1 border-e-emerald-500">INTERVIEW</p>
+</div>
+
+<div>
+    <p class="text-red-500 border-2 p-1 border-b-red-500">REJECTED</p>
+</div>
+</div>
+<div><i class="fa-regular fa-trash-can"></i></div>
+</div>
+
+
+
+
+
+</section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
