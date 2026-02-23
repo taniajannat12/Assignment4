@@ -12,7 +12,7 @@ const rejectFilterBtn=document.getElementById('reject-filter-btn');
 const filteredSection=document.getElementById('filtered-section');
 const mainContainer = document.querySelector('main');
 function calculate(){
-    total.innerText=allCards.children.length;
+    total.innerText=allCards.firstElementChild.children.length;
     inter.innerText=interList.length;
     reject.innerText=rejectList.length;
 }
@@ -60,7 +60,7 @@ allFilterBtn.classList.remove('bg-blue-500','text-black');
 }
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('interview-btn')) {
-        const parentNode = event.target.parentNode.parentNode;
+        const parentNode = event.target.parentNode.parentNode.parentNode;
 
         const mobile = parentNode.querySelector('.mobile').innerText;
         const react = parentNode.querySelector('.react').innerText;
@@ -92,7 +92,7 @@ mainContainer.addEventListener('click', function (event) {
         calculate();
     } 
     else if (event.target.classList.contains('reject-btn')) {
-        const parentNode = event.target.parentNode.parentNode;
+        const parentNode = event.target.parentNode.parentNode.parentNode;
 
         const mobile = parentNode.querySelector('.mobile').innerText;
         const react = parentNode.querySelector('.react').innerText;
