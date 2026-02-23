@@ -6,8 +6,11 @@ https://taniajannat12.github.io/Assignment4/
 
 Ans:
 getElementById:  only find id
+
 getElementsByClassName: return a class element
+
 querySelector:  return 1st element
+
 querySelectorAll: return all element at NodeList
 
 
@@ -15,6 +18,7 @@ querySelectorAll: return all element at NodeList
 
 Ans:
 create:document.createElement('tagName')
+
 insert:appendChild();
 
 
@@ -22,6 +26,7 @@ insert:appendChild();
 
 Ans:
 when click a child element then it up his parent element
+
 work:when click child then it work event handler,then parent,then got to document.
 
 
@@ -29,6 +34,7 @@ work:when click child then it work event handler,then parent,then got to documen
 
 Ans:
 It is common parent which element can handle evenListener
+
 useful: memory efficiency,handle dynamic elements.
 
 
@@ -36,6 +42,7 @@ useful: memory efficiency,handle dynamic elements.
 
 ans:
 preventDefault():Stop work default element
+
 stopPropagation() : Stop bubbling which go to up.
 
 
