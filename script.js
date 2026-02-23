@@ -1,6 +1,6 @@
 let interList=[];
 let rejectList=[];
-let currentStatus='all';
+let currentStatus='all-filter-btn';
 
 const total=document.getElementById('total');
 const inter=document.getElementById('inter');
@@ -17,7 +17,18 @@ function calculate(){
     inter.innerText=interList.length;
     reject.innerText=rejectList.length;
 
-    if(currentStatus=="all-filter-btn")
+    if(currentStatus=="all-filter-btn"){
+        job.innerText=allCards.firstElementChild.children.length;
+    }
+    else if(currentStatus=="inter-filter-btn")
+    {
+        job.innerText=interList.length;
+    }
+      else if(currentStatus=="reject-filter-btn")
+    {
+        job.innerText=rejectList.length;
+    }
+   
 }
 calculate();
 
@@ -59,7 +70,7 @@ allFilterBtn.classList.remove('bg-blue-500','text-black');
        renderReject();
     }
 
-
+calculate();
 }
 
 
@@ -74,9 +85,9 @@ mainContainer.addEventListener('click', function (event) {
             interList=interList.filter(item=>item.mobile!==mobile);
             rejectList=rejectList.filter(item=>item.mobile!==mobile);
             if(currentStatus=="inter-filter-btn")
-                renderInter();
-            else
-                renderReject();
+               {renderInter();}
+            else if(currentStatus=="reject-filter-btn")
+               { renderReject();}
             calculate();
             return;
         }
@@ -191,9 +202,3 @@ function renderReject(){
     }
 }
 
-
-
-
-function calculate(){
-
-}
