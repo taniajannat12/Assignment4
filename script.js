@@ -179,6 +179,15 @@ function renderInter(){
         `
         filteredSection.appendChild(div);
     }
+
+    if(interList.length==0){
+        filteredSection.innerHTML=`
+<div class="mx-auto text-center border-amber-50">
+<img src="jobs.png"alt="" class="mx-auto block w-40 mb-4">
+<h3>No jobs available</h3>
+<p>Check back for new job opportunities</p></div>
+`
+    }
 }
 
 
@@ -200,5 +209,16 @@ function renderReject(){
         `
         filteredSection.appendChild(div);
     }
+    
+    if(rejectList.length==0){
+        filteredSection.innerHTML=`
+<div class="mx-auto text-center border-amber-50">
+<img src="jobs.png"alt="" class="mx-auto block w-40 mb-4">
+<h3>No jobs available</h3>
+<p>Check back for new job opportunities</p></div>
+`
+    }
 }
+
+
 
