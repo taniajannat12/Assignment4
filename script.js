@@ -11,10 +11,13 @@ const interFilterBtn=document.getElementById('inter-filter-btn');
 const rejectFilterBtn=document.getElementById('reject-filter-btn');
 const filteredSection=document.getElementById('filtered-section');
 const mainContainer = document.querySelector('main');
+const job=document.getElementById('job');
 function calculate(){
     total.innerText=allCards.firstElementChild.children.length;
     inter.innerText=interList.length;
     reject.innerText=rejectList.length;
+
+    if(currentStatus=="all-filter-btn")
 }
 calculate();
 
@@ -58,7 +61,25 @@ allFilterBtn.classList.remove('bg-blue-500','text-black');
 
 
 }
+
+
+        
 mainContainer.addEventListener('click', function (event) {
+
+    
+ if(event.target.classList.contains('fa-trash-can')){
+    const card=event.target.parentNode.parentNode.parentNode;
+    const mobile=card.querySelector('.mobile').innerText
+            card.remove();
+            interList=interList.filter(item=>item.mobile!==mobile);
+            rejectList=rejectList.filter(item=>item.mobile!==mobile);
+            if(currentStatus=="inter-filter-btn")
+                renderInter();
+            else
+                renderReject();
+            calculate();
+            return;
+        }
     if (event.target.classList.contains('interview-btn')) {
         const parentNode = event.target.parentNode.parentNode.parentNode;
 
@@ -76,6 +97,7 @@ mainContainer.addEventListener('click', function (event) {
             status: 'Interview',
             notes
         };
+       
 
         const mobileExist = interList.find(item => item.mobile === cardInfo.mobile);
 
@@ -141,6 +163,7 @@ function renderInter(){
             <p class="remote text-gray-400">${item.remote}</p>
             <p class="status bg-green-200 p-1 w-32 h-8 rounded-xl box-border">INTERVIEW</p>
             <p class="notes">${item.notes}</p>
+           <div><i class="fa-regular fa-trash-can"></i></div>
         </div>
         `
         filteredSection.appendChild(div);
@@ -161,8 +184,16 @@ function renderReject(){
             <p class="remote text-gray-400">${item.remote}</p>
             <p class="status bg-green-200 p-1 w-32 h-8 rounded-xl box-border">Rejected</p>
             <p class="notes">${item.notes}</p>
+         <div><i class="fa-regular fa-trash-can"></i></div>
         </div>
         `
         filteredSection.appendChild(div);
     }
+}
+
+
+
+
+function calculate(){
+
 }
