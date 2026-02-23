@@ -42,6 +42,11 @@ allFilterBtn.classList.remove('bg-blue-500','text-black');
     if(id=='inter-filter-btn'){
         allCards.classList.add('hidden');
         filteredSection.classList.remove('hidden');
+     
+    }
+    else if(id=='all-filter-btn'){
+       allFilterBtn.classList.remove('hidden');
+        filteredSection.classList.add('hidden');
 
     }
 
