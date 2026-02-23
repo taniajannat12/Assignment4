@@ -9,7 +9,8 @@ const allCards=document.getElementById('all-cards');
 const allFilterBtn=document.getElementById('all-filter-btn');
 const interFilterBtn=document.getElementById('inter-filter-btn');
 const rejectFilterBtn=document.getElementById('reject-filter-btn');
-
+const filteredSection=document.getElementById('filtered-section');
+const mainContainer = document.querySelector('main');
 function calculate(){
     total.innerText=allCards.children.length;
     inter.innerText=interList.length;
@@ -38,5 +39,60 @@ allFilterBtn.classList.remove('bg-blue-500','text-black');
 
 
 
+    if(id=='inter-filter-btn'){
+        allCards.classList.add('hidden');
+        filteredSection.classList.remove('hidden');
 
+    }
+
+
+}
+
+    mainContainer.addEventListener('click',function(event){
+  if(event.target.classList.contains('interview-btn')){
+    const parentNode=event.target.parentNode.parentNode;
+  
+  const mobile=parentNode.querySelector('.mobile').innerText;
+  const react=parentNode.querySelector('.react').innerText;
+const remote=parentNode.querySelector('.remote').innerText;
+const status=parentNode.querySelector('.status').innerText;
+const notes=parentNode.querySelector('.notes').innerText;
+const  cardInfo={
+    mobile,
+    react,
+    remote,
+    status,
+    notes
+}
+const mobileExist=interList.find(item=> item.mobile==cardInfo.mobile)
+parentNode.querySelector('.status').innerText='Interview'
+if(!mobileExist)
+{
+    interList.push(cardInfo)
+}
+ renderInter();
+ calculate();
+    }
+
+})
+
+
+
+
+function renderInter(){
+    filteredSection.innerHTML=""
+    for(let item of interList)
+    {
+        let div=document.createElement('div');
+       
+        div.innerHTML=`   <div class="space-y-4 border-amber-50 shadow-xl rounded-xl px-4 py-4">
+            <h3 class="mobile font-bold text-xl">${item.mobile}</h3>
+            <p class="react text-gray-400">${item.react}</p>
+            <p class="remote text-gray-400">${item.remote}</p>
+            <p class="status bg-green-200 p-1 w-32 h-8 rounded-xl box-border">INTERVIEW</p>
+            <p class="notes">${item.notes}</p>
+        </div>
+        `
+        filteredSection.appendChild(div);
+    }
 }
